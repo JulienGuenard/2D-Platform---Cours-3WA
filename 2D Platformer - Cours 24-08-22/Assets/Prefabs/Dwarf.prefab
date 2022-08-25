@@ -101,9 +101,11 @@ GameObject:
   - component: {fileID: 8434510096397837734}
   - component: {fileID: 3359826034439524398}
   - component: {fileID: 4017843887687941361}
+  - component: {fileID: 2809083462356297639}
+  - component: {fileID: 2809083462356297640}
   m_Layer: 0
   m_Name: Dwarf
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +130,7 @@ Transform:
   - {fileID: 7607405188232907657}
   - {fileID: 3696594587971798390}
   - {fileID: 2672024336833558005}
+  - {fileID: 8400851465175092503}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -161,7 +164,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 838767319735461968}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62b9e344b73013a46a465f506fb075b9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -215,6 +218,8 @@ MonoBehaviour:
   dwarf_Move: {fileID: 8434510096397837734}
   dwarf_Jump: {fileID: 8525273691610600765}
   dwarf_Animation: {fileID: 4017843887687941361}
+  dwarf_Collect: {fileID: 0}
+  dwarf_Attack: {fileID: 0}
 --- !u!114 &8525273691610600765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +237,8 @@ MonoBehaviour:
   dwarf_Move: {fileID: 8434510096397837734}
   dwarf_Jump: {fileID: 8525273691610600765}
   dwarf_Animation: {fileID: 4017843887687941361}
+  dwarf_Collect: {fileID: 0}
+  dwarf_Attack: {fileID: 0}
   force: 2000
 --- !u!114 &8434510096397837734
 MonoBehaviour:
@@ -250,6 +257,8 @@ MonoBehaviour:
   dwarf_Move: {fileID: 8434510096397837734}
   dwarf_Jump: {fileID: 8525273691610600765}
   dwarf_Animation: {fileID: 4017843887687941361}
+  dwarf_Collect: {fileID: 0}
+  dwarf_Attack: {fileID: 0}
   speed: 8
 --- !u!114 &3359826034439524398
 MonoBehaviour:
@@ -268,6 +277,8 @@ MonoBehaviour:
   dwarf_Move: {fileID: 8434510096397837734}
   dwarf_Jump: {fileID: 8525273691610600765}
   dwarf_Animation: {fileID: 4017843887687941361}
+  dwarf_Collect: {fileID: 0}
+  dwarf_Attack: {fileID: 0}
 --- !u!114 &4017843887687941361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +296,46 @@ MonoBehaviour:
   dwarf_Move: {fileID: 8434510096397837734}
   dwarf_Jump: {fileID: 8525273691610600765}
   dwarf_Animation: {fileID: 4017843887687941361}
+  dwarf_Collect: {fileID: 0}
+  dwarf_Attack: {fileID: 0}
+--- !u!114 &2809083462356297639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838767319735461968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5228fdc834bcb5458740afc59acdc80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  dwarf_Move: {fileID: 0}
+  dwarf_Jump: {fileID: 0}
+  dwarf_Animation: {fileID: 0}
+  dwarf_Collect: {fileID: 0}
+  dwarf_Attack: {fileID: 0}
+--- !u!114 &2809083462356297640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838767319735461968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2670a39e174c1e4992db21babcc2dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  dwarf_Move: {fileID: 0}
+  dwarf_Jump: {fileID: 0}
+  dwarf_Animation: {fileID: 0}
+  dwarf_Collect: {fileID: 0}
+  dwarf_Attack: {fileID: 0}
 --- !u!1 &901698936585568394
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,3 +898,106 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &3531081262873574165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1395520963078126290}
+    m_Modifications:
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1569977
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890493694999519393, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_IsLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890493694999519393, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_IsContraintActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890493694999519393, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_TranslationAtRest.x
+      value: 112.856995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890493694999519393, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_TranslationAtRest.y
+      value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890493694999519393, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_TranslationOffsets.Array.data[0].x
+      value: 1.1569977
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890493694999519393, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 1395520963078126290}
+    - target: {fileID: 8909604951655744276, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+      propertyPath: m_Name
+      value: DwarfChkFace
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+--- !u!1 &5378896424368699393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8909604951655744276, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+  m_PrefabInstance: {fileID: 3531081262873574165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1728033386539654282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378896424368699393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58fdf65a838c284b9a2b4624a033a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8400851465175092503 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5013977904846550530, guid: 2a08cfc0fbf96e940a54fe0105da718d, type: 3}
+  m_PrefabInstance: {fileID: 3531081262873574165}
+  m_PrefabAsset: {fileID: 0}

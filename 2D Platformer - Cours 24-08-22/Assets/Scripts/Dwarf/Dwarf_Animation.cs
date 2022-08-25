@@ -30,4 +30,15 @@ public class Dwarf_Animation : Dwarf_Heritage
     {
         animator.SetBool("isVictory", !animator.GetBool("isVictory"));
     }
+
+    public void AttackStart()
+    {
+        animator.SetBool("isAttacking", true);
+    }
+
+    public void AttackEnd()
+    {
+        animator.SetBool("isAttacking", false);
+        dwarf.EnableInputs();
+    }
 }

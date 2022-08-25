@@ -9,6 +9,13 @@ public class Dwarf_Jump : Dwarf_Heritage
     bool isJumping = false;
     bool isGrounded = true;
 
+    Vector3 startPos;
+
+    private void Awake()
+    {
+        startPos = transform.position;
+    }
+
     private void Update()
     {
         CheckGround();
@@ -46,6 +53,11 @@ public class Dwarf_Jump : Dwarf_Heritage
         {
             transform.SetParent(collision.transform);
             isGrounded = true;
+        }
+
+        if (collision.tag == "FallTrigger")
+        {
+            transform.position = startPos;
         }
     }
 
