@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingChandelier : MonoBehaviour
 {
     public float speed;
     public float delay;
 
+    Rigidbody2D rb;
+    HingeJoint2D hinge;
+
     void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
+        hinge = GetComponent<HingeJoint2D>();
         StartCoroutine(ChangeWay());
     }
 
@@ -19,7 +24,9 @@ public class MovingPlatform : MonoBehaviour
 
     void Move()
     {
-        transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+        JointMotor2D motor = hinge.motor;
+        motor.motorSpeed = speed;
+        hinge.motor = motor;
     }
 
     IEnumerator ChangeWay()

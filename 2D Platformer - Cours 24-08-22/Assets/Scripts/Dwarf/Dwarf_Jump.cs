@@ -20,9 +20,7 @@ public class Dwarf_Jump : Dwarf_Heritage
         if (!isGrounded) return;
         if (isJumping) return;
 
-        Debug.Log("aaa");
-
-            isJumping = true;
+        isJumping = true;
             isGrounded = false;
             rb.AddForce(new Vector2(0, force));
     }
