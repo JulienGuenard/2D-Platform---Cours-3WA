@@ -17,7 +17,10 @@ public class Dwarf_Attack : Dwarf_Heritage
     {
         dwarf_Animation.AttackStart();
         dwarf.DisableInputs();
-        
+    }
+
+    public void AttackAfterAnimation()
+    {
         if (dwarfChkFace.GetWoodAtRange() == null) return;
 
         WoodObstacle wood = dwarfChkFace.GetWoodAtRange().GetComponent<WoodObstacle>();

@@ -14,13 +14,24 @@ public class Dwarf_Animation : Dwarf_Heritage
 
     public void JumpStart()
     {
-            if (rb.velocity.y > 1) animator.SetBool("isJumping", true);
-            if (rb.velocity.y > 1) animator.SetBool("isFalling", false);
-            if (rb.velocity.y < 1) animator.SetBool("isJumping", false);
-            if (rb.velocity.y < 1) animator.SetBool("isFalling", true);
+            animator.SetBool("isJumping", true);
+        //  animator.SetBool("isFalling", false);
+      //   animator.SetBool("isJumping", false);
+       //    animator.SetBool("isFalling", true);
     }
 
     public void JumpEnd()
+    {
+        animator.SetBool("isJumping", false);
+    }
+
+    public void FallStart()
+    {
+        animator.SetBool("isFalling", true);
+        animator.SetBool("isJumping", false);
+    }
+
+    public void FallEnd()
     {
         animator.SetBool("isFalling", false);
         animator.SetBool("isJumping", false);
@@ -39,6 +50,5 @@ public class Dwarf_Animation : Dwarf_Heritage
     public void AttackEnd()
     {
         animator.SetBool("isAttacking", false);
-        dwarf.EnableInputs();
     }
 }

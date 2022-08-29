@@ -8,10 +8,11 @@ public class Dwarf_Jump : Dwarf_Heritage
 
     bool isJumping = false;
     bool isGrounded = true;
+    bool isFailling = false;
 
     Vector3 startPos;
 
-    private void Awake()
+    private new void Awake()
     {
         startPos = transform.position;
     }
@@ -19,7 +20,7 @@ public class Dwarf_Jump : Dwarf_Heritage
     private void Update()
     {
         CheckGround();
-        CheckJump();
+        CheckFall();
     }
 
     public void Jump()
@@ -28,8 +29,14 @@ public class Dwarf_Jump : Dwarf_Heritage
         if (isJumping) return;
 
         isJumping = true;
-            isGrounded = false;
-            rb.AddForce(new Vector2(0, force));
+        isGrounded = false;
+        dwarf_Animation.JumpStart();
+    }
+
+    public void JumpAfterAnimation()
+    {
+        rb.gravityScale = 2f;
+        rb.AddForce(new Vector2(0, force));
     }
 
     void CheckGround()
@@ -37,14 +44,19 @@ public class Dwarf_Jump : Dwarf_Heritage
         if (isGrounded) isJumping = false;
     }
 
-    void CheckJump()
+    void CheckFall()
     {
-        if (isJumping)
+        if (rb.velocity.y < -5f)
         {
-            dwarf_Animation.JumpStart();
-            return;
+            isFailling = true;
+            rb.gravityScale = 6f;
+            dwarf_Animation.FallStart();
         }
-        dwarf_Animation.JumpEnd();
+        else if(isFailling)
+        {
+            isFailling = false;
+            dwarf_Animation.FallEnd();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
