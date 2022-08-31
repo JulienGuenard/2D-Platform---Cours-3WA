@@ -12,9 +12,13 @@ public class Dwarf_Jump : Dwarf_Heritage
 
     Vector3 startPos;
 
+    public List<GameObject> lifeList;
+    int lifeCount;
+
     private new void Awake()
     {
         startPos = transform.position;
+        lifeCount = lifeList.Count;
     }
 
     private void Update()
@@ -70,6 +74,13 @@ public class Dwarf_Jump : Dwarf_Heritage
         if (collision.tag == "FallTrigger")
         {
             transform.position = startPos;
+            lifeCount--;
+            lifeList[lifeCount].SetActive(false);
+            if (lifeCount <= 0)
+            {
+                GameManager.instance.Lose();
+                Destroy(this.gameObject);
+            }
         }
     }
 

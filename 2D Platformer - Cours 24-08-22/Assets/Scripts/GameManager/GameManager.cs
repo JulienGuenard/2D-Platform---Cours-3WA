@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public float winRestartTime;
 
     public GameObject winCanvas;
+    public GameObject loseCanvas;
 
     bool isWin = false;
+    bool isLose = false;
 
     void Awake()
     {
@@ -29,6 +31,15 @@ public class GameManager : MonoBehaviour
 
         isWin = true;
         winCanvas.SetActive(true);
+        StartCoroutine(WinRestart());
+    }
+
+    public void Lose()
+    {
+        if (isLose) return;
+
+        isLose = true;
+        loseCanvas.SetActive(true);
         StartCoroutine(WinRestart());
     }
 
