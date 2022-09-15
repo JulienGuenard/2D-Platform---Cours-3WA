@@ -1,4 +1,4 @@
-# 2D Dwarf Platform <a href="https://archer01.itch.io/titans-souls">(Play game)</a>&nbsp;
+# 2D Dwarf Platform <a href="https://archer01.itch.io/dwarf-platformer-2d">(Play game)</a>&nbsp;
 
 <div align="center"> 
   <img src="Github-Screenshots/screenshot1.png" alt="screenshot" width="128" />&nbsp
